@@ -2,8 +2,6 @@ from p5 import *
 import random
 import time
 
-
-
 infectedX = 750
 infectedY = 750
 policeX = 50
@@ -29,19 +27,14 @@ numberPolicemove = 0
 policePoints = 0
 infectedPoints = 0
 
-
 def setup():
     size(800,800)
     no_stroke()
     spaces[0] = 2
     spaces[63] = 1
 
-
 def draw():
     global infectedX,infectedY,policeX, policeY,infectedTurn,policeTurn, height, width, infectedMove, policeMove, screen, f, spaces, BoxXp, BoxYp,movePolice, BoxXi, BoxYi, moveInfected, numberInfectedmove, numberPolicemove, policePoints, infectedPoints
-
-
-
 
     if(screen==0):
         background(255)
@@ -57,8 +50,6 @@ def draw():
             screen=1
     
     if(screen==1):  
-
-
         for x in range(0, 64):
             if(spaces[x] == 2):
                 l=x
@@ -274,12 +265,7 @@ def draw():
                     policePoints=policePoints+1
             infectedPoints=infectedPoints-1 
             screen=3
-
-
             
-
-
-
         if(numberPolicemove > 32):
             if key_is_pressed:
                 if key == "a":
@@ -290,11 +276,6 @@ def draw():
                     policeX=policeX
                 if key == "s":
                     policeY=policeY     
-
-
- 
-
-
 
         if(policeMove==True):
             policeTurn=False
@@ -358,7 +339,6 @@ def draw():
         rect((1,((width/8)*6)),height-1,(width/8)-1)
         rect((1,((width/8)*7)-1),height-1,width/8)
 
-
         rect((1,1),(height/8)-1,width)
         rect((height/8,1),(height/8)-1,width)
         rect(((height/8)*2,1),(height/8)-1,width)
@@ -367,8 +347,7 @@ def draw():
         rect(((height/8)*5,1),(height/8)-1,width)
         rect(((height/8)*6,1),(height/8)-1,width) 
         rect(((height/8)*7,1),(height/8)-1,width)
-
-    
+        
     if(screen==3):
         background(255)
         if(infectedPoints<policePoints):
